@@ -15,7 +15,7 @@ function spinalCase(str) {
 
     } else if (str[i].match(/[A-Z]/)) {
 
-      string.push(eachWord.join(' '));
+      string.push(eachWord.join(''));
       eachWord = [];
       eachWord.push(str[i].toLowerCase());
       
@@ -29,13 +29,8 @@ function spinalCase(str) {
 
   string.push(eachWord.join(''));
   eachWord = [];
+  
   let result = string.filter(res => res.length > 0);
   
   return result.join('-');
 }
-
-  console.log(spinalCase("AllThe-small Things"));
-  // spinalCase("The_Andy_Griffith_Show");
-  // spinalCase("AllThe-small Things");
- console.log(spinalCase("thisIsSpinalTap"));
-  // spinalCase("this is spinal tap");
