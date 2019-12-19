@@ -1,16 +1,29 @@
 const abc = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 
 function fearNotLetter(str) {
-    return abc.find((element,index) => {
+    let result;
+
+    abc.find((element,index) => {
         if(element === str[0]){
-           
-           let algo = abc[index + 1] === str[1];
-           return algo;
+           for (let i = 1; i<str.length; i++ ){
+                
+                let algo = abc[index + i] === str[i];
+                
+                if(!algo){
+                    result = abc[index + i];
+                    break;
+                }
+                // console.log(abc[index + i]+' '+str[i]);
+                // console.log(algo);
+                
+           }
         }
     });
     
+    return result;
+
   }
   
-  console.log(fearNotLetter("abce"));
+  console.log(fearNotLetter("stvwx"));
   fearNotLetter("stvwx");
   fearNotLetter("bcdf");
