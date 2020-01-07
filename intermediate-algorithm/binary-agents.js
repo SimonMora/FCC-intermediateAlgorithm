@@ -8,9 +8,21 @@ function binaryAgent(str) {
     let separate = str.split(' ');
     let realString = '';
     for(let letter of separate){
-        
-        let sum = letter[0] * Math.pow(2,7) + letter[1] * Math.pow(2,6) + letter[2] * Math.pow(2,5) + letter[3] * Math.pow(2,4) +
-        letter[4] * Math.pow(2,3) + letter[5] * Math.pow(2,2) + letter[6] * Math.pow(2,1) + letter[7] * Math.pow(2,0);
+        let sum = 0;
+        let potencia = 7;
+        for(let i=0;i<=7;i++){ 
+            console.log(letter[i]);
+            
+            for(var j=7; j>=0;j--){
+                console.log(j);
+                sum += letter[i] * Math.pow(2,potencia);
+                potencia--;
+                break;
+
+            }
+        }
+        // let sum = letter[0] * Math.pow(2,7) + letter[1] * Math.pow(2,6) + letter[2] * Math.pow(2,5) + letter[3] * Math.pow(2,4) +
+        // letter[4] * Math.pow(2,3) + letter[5] * Math.pow(2,2) + letter[6] * Math.pow(2,1) + letter[7] * Math.pow(2,0);
         realString += ascii[sum];
        
     }
@@ -18,5 +30,5 @@ function binaryAgent(str) {
     return realString;
 } 
       
-binaryAgent("01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111");
+console.log(binaryAgent("01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111"));
       
